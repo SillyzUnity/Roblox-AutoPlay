@@ -5,7 +5,7 @@ Welcome to the official **Roblox AutoPlay and AutoClicker Script Hub**. This rep
 * 🎮 **AutoPlay**: Automates character movement and behaviors.
 * 🖱️ **AutoClicker**: Automates mouse clicks.
 
-These scripts are meant for educational or testing use in sandbox environments or single-player simulations.
+These scripts are meant for educational or testing use in sandbox environments, primarily for **Roblox shooter games** that support **first-person**. **Third-person** support **might** come soon!
 
 ---
 
