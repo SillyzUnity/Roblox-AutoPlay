@@ -1,19 +1,15 @@
-# 🤖 AutoPlay Script for Roblox
+AutoPlay Script for Roblox
+--------------------------
 
-This script automates basic gameplay actions, allowing your character to play on its own. Ideal for grinding, farming, or staying active in-game without manual input.
+This script automates gameplay actions like movement and interaction, letting your character play on its own. Great for grinding or farming while AFK.
 
-## 🔧 Recommended for Best Performance
+Recommended for Best Performance:
+Use this together with the "AutoClicker" script for better results.
 
-We **highly recommend** using this alongside our [AutoClicker Script](./AutoClicker.lua) for faster and smoother automation.
+AutoClicker handles fast clicking and tapping, while AutoPlay takes care of gameplay logic and movement. Running both gives you smoother and faster automation.
 
-> 💡 AutoClicker handles rapid interactions (clicking, tapping, etc.), while AutoPlay takes care of movement and decision-making.
+Download both scripts from the same repository in the "source" folder or in the description on the front page.
 
-Using both scripts together provides the best automation experience in supported Roblox games.
-
----
-
-✅ Simple setup  
-⚡ Boosted efficiency  
-🛠️ Compatible with most AutoPlay-supported games
-
----
+- Easy to set up  
+- Improves efficiency  
+- Works in most autoplay-supported Roblox games
