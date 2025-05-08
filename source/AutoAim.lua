@@ -93,7 +93,7 @@ RunService.RenderStepped:Connect(function()
 	local head = getNearestEnemyHead()
 
 	if head then
-		local predicted = head.Position + head.Velocity * 0.05
+		local predicted = head.Position + head.Velocity * 0
 		local camPos = camera.CFrame.Position
 		local desiredCFrame = CFrame.new(camPos, predicted)
 		camera.CFrame = camera.CFrame:Lerp(desiredCFrame, SMOOTH_FACTOR)
