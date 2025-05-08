@@ -184,7 +184,7 @@ coroutine.wrap(function()
                             VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.E, false, game)
                             -- Freeze
                             safeDirection = Vector3.zero
-                            task.wait(0.5)
+                            task.wait(1)
                             -- Press E (stop)
                             VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.E, false, game)
                             VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.E, false, game)
