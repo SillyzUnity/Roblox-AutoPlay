@@ -18,7 +18,7 @@ repeat wait() until player.Character and player.Character:FindFirstChild("Humano
 
 -- Settings
 local SMOOTH_FACTOR = 0.2
-local SNAP_FOV_DEGREES = 0
+local SNAP_FOV_DEGREES = 10
 local desiredDistance = 20
 local jukeChance = 0.3
 local jukeFactor = 3.5
