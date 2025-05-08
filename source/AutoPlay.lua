@@ -4,24 +4,26 @@
     This script controls a bot that mimics the movement of the nearest moving player in a game,
     with team/FFA awareness, juke behavior (avoiding jukes for teammates), camera aim at moving enemies,
     and a red transparent circle showing a fixed visual click target (no actual clicking anymore).
+    Also presses "E", pauses for 0.5s, then presses "E" again when the nearest moving player dies.
 ]]
 
 local player = game.Players.LocalPlayer
 local RunService = game:GetService("RunService")
 local Players = game:GetService("Players")
 local Workspace = game:GetService("Workspace")
+local VirtualInputManager = game:GetService("VirtualInputManager")
 
 local camera = Workspace.CurrentCamera
 repeat wait() until player.Character and player.Character:FindFirstChild("HumanoidRootPart")
 
 -- Settings
 local SMOOTH_FACTOR = 0.1
-local SNAP_FOV_DEGREES = 10
+local SNAP_FOV_DEGREES = 120
 local desiredDistance = 20
 local jukeChance = 0.3
 local jukeFactor = 3.5
 local rayCheckDist = 20
-local jumpChance = 0.05 -- Chance to jump every frame
+local jumpChance = 0.05
 
 -- GUI FOV circle
 local fovGui = Instance.new("ScreenGui", player:WaitForChild("PlayerGui"))
@@ -158,10 +160,41 @@ RunService.RenderStepped:Connect(function()
 end)
 
 coroutine.wrap(function()
+    local lastNearest = nil
+    local watchingHumanoid = nil
+
     while true do
         updateReferences()
         local nearest = getNearestMovingPlayer()
         local moveDir = Vector3.zero
+
+        if nearest ~= lastNearest then
+            if watchingHumanoid then
+                watchingHumanoid:Disconnect()
+                watchingHumanoid = nil
+            end
+
+            if nearest and nearest.Character then
+                local hum = nearest.Character:FindFirstChildOfClass("Humanoid")
+                if hum then
+                    watchingHumanoid = hum.Died:Connect(function()
+                        if humanoid then
+                            -- Press E (start)
+                            VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.E, false, game)
+                            VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.E, false, game)
+                            -- Freeze
+                            safeDirection = Vector3.zero
+                            task.wait(0.5)
+                            -- Press E (stop)
+                            VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.E, false, game)
+                            VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.E, false, game)
+                        end
+                    end)
+                end
+            end
+
+            lastNearest = nearest
+        end
 
         if nearest and nearest.Character and nearest.Character:FindFirstChild("HumanoidRootPart") then
             local targetHRP = nearest.Character.HumanoidRootPart
