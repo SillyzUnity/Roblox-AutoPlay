@@ -17,8 +17,8 @@ local camera = Workspace.CurrentCamera
 repeat wait() until player.Character and player.Character:FindFirstChild("HumanoidRootPart")
 
 -- Settings
-local SMOOTH_FACTOR = 0.1
-local SNAP_FOV_DEGREES = 120
+local SMOOTH_FACTOR = 0.2
+local SNAP_FOV_DEGREES = 0
 local desiredDistance = 20
 local jukeChance = 0.3
 local jukeFactor = 3.5
