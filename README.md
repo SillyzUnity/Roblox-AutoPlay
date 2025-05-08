@@ -1,11 +1,12 @@
-# 🤖 **Roblox AutoPlay & AutoClicker**
+# 🤖 **Roblox AutoPlay, AutoClicker & AutoChat**
 
-Welcome to the official **Roblox AutoPlay and AutoClicker Script Hub**. This repository contains two powerful Lua scripts:
+Welcome to the official **Roblox AutoPlay, AutoClicker, and AutoChat Script Hub**. This repository contains three powerful Lua scripts:
 
 * 🎮 **AutoPlay**: Automates character movement and behaviors.
 * 🖱️ **AutoClicker**: Automates mouse clicks.
+* 💬 **AutoChat**: Automates in-game chat messages.
 
-These scripts are meant for educational or testing use in sandbox environments, primarily for **Roblox shooter games** that support **first-person**. **Third-person** support **might** come soon!
+These scripts are intended for educational or testing use in sandbox environments, primarily for **Roblox shooter games** that support **first-person**. **Third-person** support **might** come soon!
 
 ---
 
@@ -13,6 +14,7 @@ These scripts are meant for educational or testing use in sandbox environments, 
 
 * [AutoClicker.lua](https://raw.githubusercontent.com/SillyzUnity/Roblox-AutoPlay/refs/heads/main/source/AutoClicker.lua) 🖱️
 * [AutoPlay.lua](https://raw.githubusercontent.com/SillyzUnity/Roblox-AutoPlay/refs/heads/main/source/AutoPlay.lua) 🎮
+* [AutoChat.lua](https://raw.githubusercontent.com/SillyzUnity/Roblox-AutoPlay/refs/heads/main/source/AutoChat.lua) 💬
 
 ---
 
@@ -30,15 +32,22 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/SillyzUnity/Roblox-Au
 loadstring(game:HttpGet("https://raw.githubusercontent.com/SillyzUnity/Roblox-AutoPlay/refs/heads/main/source/AutoPlay.lua"))()
 ```
 
+### 💬 **AutoChat Loader**
+
+```
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SillyzUnity/Roblox-AutoPlay/refs/heads/main/source/AutoChat.lua"))()
+```
+
 ---
 
 ## 🔁 **Combined Loader Script**
 
-This version loads both AutoClicker and AutoPlay in one line.
+This version loads all three scripts in one go.
 
 ```
 loadstring(game:HttpGet("https://raw.githubusercontent.com/SillyzUnity/Roblox-AutoPlay/refs/heads/main/source/AutoClicker.lua"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/SillyzUnity/Roblox-AutoPlay/refs/heads/main/source/AutoPlay.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SillyzUnity/Roblox-AutoPlay/refs/heads/main/source/AutoChat.lua"))()
 ```
 
 ---
@@ -55,6 +64,4 @@ These scripts are **for educational or personal use only**. Do not use them in g
 2. Paste it into your Roblox script executor.
 3. Run the script while in a supported game or test place.
 
-Enjoy automated testing or simulation! 🎮🖱️
-
----
+Enjoy automated testing or simulation! 🎮🖱️💬
